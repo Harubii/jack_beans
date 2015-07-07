@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
   def member
   end
 
-  def plactice
+  def practice
   end
 
   def contact

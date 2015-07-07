@@ -1,10 +1,14 @@
-Rails.application.routes.draw do
-  get "static_pages/contact"
-  get "static_pages/home"
-  get "static_pages/news"
-  get "static_pages/about"
-  get "static_pages/member"
-  get "static_pages/plactice"
+JackBeans::Application.routes.draw do
+get "users/new"
+
+root  'static_pages#home'
+match '/signup',      to: 'users#new',                via: 'get'
+match '/news',        to: 'static_pages#news',        via: 'get'
+match '/practice',    to: 'static_pages#practice',    via: 'get'
+match '/about',       to: 'static_pages#about',       via: 'get'
+match '/member',      to: 'static_pages#member',      via: 'get'
+match '/contact',     to: 'static_pages#contact',     via: 'get'
+
   resources :microposts
 
   resources :users
